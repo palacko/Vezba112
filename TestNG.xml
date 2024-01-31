@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Contact Form">
+
+        <parameter name="subjectHeading" value="Customer service"/>
+        <parameter name="email" value="test@test.com"/>
+        <parameter name="orderNum" value="123"/>
+        <parameter name="upload" value="Yes"/>
+        <parameter name="message" value="test"/>
+        <parameter name="elementSelector" value=".alert.alert-success"/>
+        <parameter name="expectedMessage" value="Your message has been successfully sent to our team."/>
+
+
+    <test name="Contact form regular email test">
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+
+    <test name="Contact form invalid email test">
+        <parameter name="email" value="testtest.com"/>
+        <parameter name="elementSelector" value=".alert.alert-danger li"/>
+        <parameter name="expectedMessage" value="Invalid email address."/>
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+
+
+</suite>
